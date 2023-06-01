@@ -55,9 +55,7 @@ bootstrap:
     # Mapping between IDP (Azure Active Directory) groups and CDF groups.
     idp-cdf-mappings:
     # Support multiple CDF Projects, like dev/test/prod in one config.
-
-        - cdf-project: cdf-bootcamp-69-test # i.e. bootcamp-01
-        
+        - cdf-project: cdf-bootcamp-69-test # i.e. bootcamp-01-test
           mappings:
               - cdf-group: cdf:root
                 idp-source-id: dd0a9803-096a-47f6-a900-ac43b3107751
@@ -68,9 +66,13 @@ bootstrap:
               - cdf-group: cdf:all:read
                 idp-source-id: 4ee37674-84fb-4f53-a806-be8207676bb5 # for the AAD Group to be matched to cdf-group
                 idp-source-name: bootcamp-69-test-all-read # i.e. bootcamp-01-test-all-read
-
+              - cdf-group: cdf:uc:all:owner
+                idp-source-id: d597962e-bcd8-4a57-9cac-c41401ab34c2
+                idp-source-name: bootcamp-69-test-uc-001-oee-owner
+              - cdf-group: cdf:uc:all:read
+                idp-source-id: ce5068c9-e84f-4371-a929-620f33c89d9d
+                idp-source-name: bootcamp-69-test-uc-001-oee-read
         - cdf-project: cdf-bootcamp-69-prod
-
           mappings:
               - cdf-group: cdf:root
                 idp-source-id: 022c0b88-7b61-4bc7-80bd-a27734402908
@@ -81,7 +83,12 @@ bootstrap:
               - cdf-group: cdf:all:read
                 idp-source-id: c3de78c3-9b02-48aa-b6a5-f60ecef893de # for the AAD Group to be matched to cdf-group
                 idp-source-name: bootcamp-69-prod-all-read # i.e. bootcamp-01-test-all-read
-
+              - cdf-group: cdf:uc:all:owner
+                idp-source-id: 040c0d04-de9c-45af-8727-07bc5ea87361
+                idp-source-name: bootcamp-69-prod-uc-001-oee-owner
+              - cdf-group: cdf:uc:all:read
+                idp-source-id: 8082ba97-ae50-445d-8045-c8572402679b
+                idp-source-name: bootcamp-69-prod-uc-001-oee-read
 
     namespaces:
         # Typical config will have a namespace for data sources ("src") and a namespace for use cases ("uc")
